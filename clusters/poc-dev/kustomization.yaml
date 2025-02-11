@@ -8,7 +8,7 @@ spec:
   path: ./clusters/poc-dev
   sourceRef:
     kind: GitRepository
-    name: fluxint
-    namespace: flux-system
+    name: flux-system
   prune: true
-  wait: true
+  validation: client
+  timeout: 2m
