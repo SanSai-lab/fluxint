@@ -10,6 +10,7 @@ spec:
     name: fluxint
     namespace: flux-system
   path: ./clusters/poc-uat
+  prune: true
   wait: true
   timeout: 2m
   dependsOn:

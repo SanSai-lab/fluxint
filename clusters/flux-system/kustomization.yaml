@@ -10,6 +10,7 @@ spec:
     kind: GitRepository
     name: fluxint
     namespace: flux-system
+  prune: true
   resources:
   - kustomization-poc-dev.yaml
   - kustomization-poc-uat.yaml
