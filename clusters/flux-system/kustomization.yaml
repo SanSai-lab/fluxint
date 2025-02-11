@@ -1,0 +1,10 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kuztomization
+metadata:
+  name: flux-system
+  namespace: flux-system
+spec:
+  interval: 5m
+  kind: GitRepository
+  name: fluxint
+  namespace: flux-system
