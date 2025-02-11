@@ -13,3 +13,4 @@ spec:
   resources:
   - kustomization-poc-dev.yaml
   - kustomization-poc-uat.yaml
+  dependsOn: []
