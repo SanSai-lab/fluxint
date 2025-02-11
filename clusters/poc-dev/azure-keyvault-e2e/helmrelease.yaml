@@ -7,25 +7,14 @@ spec:
   interval: 5m
   chart:
     spec:
-      chart: azure-keyvault-e2e
-      version: "0.1.0"
+      chart: ./apps/azure-keyvault-e2e
       sourceRef:
         kind: GitRepository
         name: fluxint
         namespace: flux-system
-      interval: 5m
   values:
     image:
       repository: saipocregistry.azurecr.io/azure-keyvault-e2e
       tag: latest
     env:
       SPRING_PROFILES_ACTIVE: "dev"
-  install:
-    remediation:
-      retries: 3
-  upgrade:
-    remediation:
-      retries: 3
-  valuesFrom:
-  - kind: ConfigMap
-    name: azure-keyvault-e2e-values
