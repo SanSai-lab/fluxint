@@ -5,6 +5,3 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m
-  kind: GitRepository
-  name: fluxint
-  namespace: flux-system
