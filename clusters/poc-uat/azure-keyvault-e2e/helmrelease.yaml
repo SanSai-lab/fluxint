@@ -1,0 +1,31 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: azure-keyvault-e2e
+  namespace: poc-uat
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: azure-keyvault-e2e
+      version: "0.1.0"
+      sourceRef:
+        kind: GitRepository
+        name: fluxint
+        namespace: flux-system
+      interval: 5m
+  values:
+    image:
+      repository: saipocregistry.azurecr.io/azure-keyvault-e2e
+      tag: latest
+    env:
+      SPRING_PROFILES_ACTIVE: "uat"
+  install:
+    remediation:
+      retries: 3
+  upgrade:
+    remediation:
+      retries: 3
+  valuesFrom:
+  - kind: ConfigMap
+    name: azure-keyvault-e2e-values
