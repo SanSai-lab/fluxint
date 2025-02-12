@@ -1,4 +1,4 @@
-apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
 kind: Kustomization
 metadata:
   name: flux-system
@@ -14,4 +14,3 @@ spec:
   resources:
   - kustomization-poc-dev.yaml
   - kustomization-poc-uat.yaml
-  dependsOn: []
